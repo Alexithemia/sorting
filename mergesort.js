@@ -1,4 +1,15 @@
 function mergeSort(array) {
+  let temp = sort(array);
+  count++;
+  const tempArr = [].concat(temp);
+  timeouts.push(setTimeout(function () {
+    mkBars(tempArr);
+  }, (count * speed)));
+  count = 0;
+  return array
+}
+function sort(array) {
+  let bars = document.getElementsByClassName('bar');
   //basecase end when arrays become singles
   if (array.length === 1) {
     return array;
@@ -7,11 +18,25 @@ function mergeSort(array) {
   const cut = Math.floor(array.length / 2);
   const left = array.slice(0, cut);
   const right = array.slice(cut);
+
+  count++;
+  const tempArr = array;
+  const tempCut = cut;
+  timeouts.push(setTimeout(function () {
+    for (let i = 0; i < tempCut; i++) {
+      console.log('hit');
+      bars[i].style.backgroundColor = 'green';
+    }
+    for (let i = tempCut; i < tempArr.length; i++) {
+      bars[i].style.backgroundColor = 'red';
+    }
+  }, (count * speed)));
   //runs the merge function to sort while also recuring itself to end with single value arrays
-  return merge(mergeSort(left), mergeSort(right));
+  return merge(sort(left), sort(right));
 }
 
 function merge(left, right) {
+  let bars = document.getElementsByClassName('bar');
   let tempArr = [];
   let iL = 0;
   let iR = 0;
@@ -29,7 +54,4 @@ function merge(left, right) {
   //returns the temporary array concatenated with whatever is left in the left and right array
   return tempArr.concat(left.slice(iL)).concat(right.slice(iR));
 }
-array = [7, 5, 8, 1, 9, 4, 0, 3, 6, 2];
-console.log('Unsorted ' + array)
-array = mergeSort(array);
-console.log('Mergesorted ' + array);
+
