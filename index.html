@@ -1,15 +1,36 @@
 <html>
 
 <head>
+  <link href='sorting.css' rel='stylesheet' media='screen' />
 </head>
 
 <body>
   <h1>Sorting!</h1>
-  <div id="Sorting"></div>
-  <script src="quicksort.js"></script>
-  <script src="mergesort.js"></script>
-  <script src="selectionsort.js"></script>
-  <script src="insertionsort.js"></script>
+  <div id='sorting'></div>
+  <div id='sortingButtons'></div>
+  <div>
+    <div id='speed'>Speed
+      <button id='fast'>Fast</button>
+      <button id='medium'>Medium</button>
+      <button id='slow'>Slow</button>
+    </div>
+    <div id='numOfBars'>#of Bars
+      <button id='10'>10</button>
+      <button id='20'>20</button>
+      <button id='30'>30</button>
+      <button id='40'>40</button>
+      <button id='50'>50</button>
+    </div>
+  </div>
+  <button id='stop'>Stop</button>
+  <div>(shuffle after)</div>
+  <script src='createclear.js'></script>
+  <script src='shuffle.js'></script>
+  <script src='quicksort.js'></script>
+  <script src='mergesort.js'></script>
+  <script src='selectionsort.js'></script>
+  <script src='insertionsort.js'></script>
+  <script src='init.js'></script>
 </body>
 
 </html>

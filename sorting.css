@@ -1,0 +1,10 @@
+#sorting{
+  display: flex; 
+  flex-flow: row nowrap;
+  align-items: flex-end;
+}
+.bar{
+  flex: 1 1;
+  margin: 5px;
+  background-color: blueviolet;
+}
